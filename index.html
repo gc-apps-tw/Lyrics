@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>使用說明 - Lyrics Pro</title>
+    <style>
+        :root {
+            --spotify-green: #1db954;
+            --bg-dark: #0b0e11;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --card-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background: radial-gradient(circle at 50% 0%, #1a202c, #0b0e11);
+            min-height: 100vh; color: #fff; display: flex; flex-direction: column; align-items: center;
+            padding: 40px 20px; line-height: 1.6;
+        }
+
+        .container { width: 100%; max-width: 600px; }
+
+        /* 標題區 */
+        .header { text-align: center; margin-bottom: 35px; }
+        .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; color: var(--spotify-green); letter-spacing: -1px; }
+        .header p { font-size: 14px; opacity: 0.6; }
+
+        /* 說明卡片 */
+        .guide-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 28px; padding: 25px; backdrop-filter: blur(20px);
+            margin-bottom: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .section { margin-bottom: 28px; }
+        .section:last-child { margin-bottom: 0; }
+        
+        .section-title { 
+            display: flex; align-items: center; gap: 12px; 
+            font-size: 19px; font-weight: 700; margin-bottom: 12px; color: #fff;
+        }
+        .section-title svg { width: 24px; height: 24px; stroke: var(--spotify-green); fill: none; stroke-width: 2.5; }
+        
+        .section-content { font-size: 15px; color: rgba(255,255,255,0.85); padding-left: 36px; }
+        .section-content ul { list-style: none; }
+        .section-content li { margin-bottom: 10px; position: relative; }
+        .section-content li::before { content: "•"; color: var(--spotify-green); position: absolute; left: -18px; font-weight: bold; }
+
+        .highlight { color: var(--spotify-green); font-weight: 600; }
+
+        /* 導覽按鈕 */
+        .nav-btn {
+            width: 100%; height: 64px; background: var(--spotify-green); color: #000;
+            border: none; border-radius: 20px; font-size: 19px; font-weight: 800;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            cursor: pointer; text-decoration: none; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
+        }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(29, 185, 84, 0.4); }
+        .nav-btn:active { transform: scale(0.97); }
+        .nav-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 3; }
+
+        @media (max-width: 480px) {
+            body { padding: 30px 15px; }
+            .header h1 { font-size: 26px; }
+            .guide-card { padding: 22px; border-radius: 24px; }
+            .nav-btn { height: 60px; font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Lyrics Pro 使用說明</h1>
+            <p>專業、精準、全自動繁體化歌詞檢索</p>
+        </div>
+
+        <div class="guide-card">
+            <div class="section">
+                <div class="section-title">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    精準檢索
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>支援 <span class="highlight">歌名、歌手</span> 混合搜尋。</li>
+                        <li>內建全域轉換引擎，搜尋結果一律呈現 <span class="highlight">繁體中文</span>。</li>
+                        <li>提供搜尋紀錄管理，支援單條刪除與全部清除。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    專業模式 (Pro Mode)
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><span class="highlight">開啟時：</span> 列表顯示歌曲時長，歌詞保留 <span class="highlight">[00:00.00]</span> 時間標籤。</li>
+                        <li><span class="highlight">關閉時：</span> 隱藏時長資訊，自動過濾所有時間軸標籤，僅保留純文字歌詞。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    複製與下載
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><span class="highlight">快速操作：</span> 搜尋列表按鈕可直接完成複製或下載，無需進入內頁。</li>
+                        <li><span class="highlight">沈浸閱讀：</span> 點擊卡片進入全螢幕模式，底部設有專屬功能按鈕，閱讀完畢隨手獲取。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    技術規格
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>時間長度採用 <span class="highlight">mm:ss</span> 格式（不含小數位）。</li>
+                        <li>下載檔案自動編碼為 UTF-8，確保繁體不亂碼。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://gc-apps-tw.github.io/Lyrics/lyrics.html" class="nav-btn">
+            立即開始搜尋
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+    </div>
+
+</body>
+</html>
