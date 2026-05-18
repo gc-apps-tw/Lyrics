@@ -311,7 +311,7 @@
         function copyAct(txt) {
             const clean = isPro ? txt : txt.replace(/\[\d{2}:\d{2}\.\d{2,3}\]/g, "").trim();
             if(!clean) return;
-            navigator.clipboard.writeText(clean).then(() => showToast("已複製繁體歌詞"));
+            navigator.clipboard.writeText(clean).then(() => showToast("已複製歌詞"));
         }
 
         function dlAct(t, a, c) {
